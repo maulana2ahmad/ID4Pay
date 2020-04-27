@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.id4pay">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/idpay"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/idpay"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".DeeplinkResultId4pay">
+            <intent-filter android:label="Ini Aplikasi ID4PAY">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "https://app.id4pay.com” -->
+                <data android:scheme="https"
+                    android:host="app.id3pay.com"
+                    android:pathPrefix="/payment/successful" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
